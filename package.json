@@ -1,0 +1,23 @@
+{
+  "name": "argocd",
+  "version": "1.0.0",
+  "description": "Learning ArgoCD",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaliitar/ArgoCD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitaliitar/ArgoCD/issues"
+  },
+  "homepage": "https://github.com/vitaliitar/ArgoCD#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
