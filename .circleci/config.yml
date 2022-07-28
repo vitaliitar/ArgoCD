@@ -16,6 +16,10 @@ workflows:
   #         region: 'us-east-1'
   #         repo: argo-app
   #         tag: "$CIRCLE_SHA1"
+  - deploy
+
+
+jobs:
   deploy:
     - run:
       name: Update repo infra
