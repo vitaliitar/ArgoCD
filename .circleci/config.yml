@@ -17,8 +17,9 @@ workflows:
   #         repo: argo-app
   #         tag: "$CIRCLE_SHA1"
   deploy:
-    steps:
-      - run:
-        name: Update repo infra
-        command: |
-          ls
+    jobs:
+      steps:
+        - run:
+          name: Update repo infra
+          command: |
+            ls
