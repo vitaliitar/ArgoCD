@@ -38,6 +38,12 @@ jobs:
       - run:
           name: Updating inferentialthinking website
           command: git pull origin main
+      - run:
+          name: List
+          command: ls
+      - run:
+        name: Commit SHA-1
+        command: echo $CIRCLE_SHA1
     # docker:
     #   - image: google/cloud-sdk:360.0.0-slim # TODO: Find a better image
     # steps:
