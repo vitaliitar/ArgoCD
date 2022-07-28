@@ -21,7 +21,8 @@ workflows:
 
 jobs:
   deploy:
-    - run:
-      name: Update repo infra
-      command: |
-        ls
+    steps:
+      - run:
+        name: Update repo infra
+        command: |
+          ls
