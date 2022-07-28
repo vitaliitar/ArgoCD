@@ -43,7 +43,7 @@ jobs:
           command: sed -i -e "17s|.*|$HELPER_PATH$CIRCLE_SHA1|" ./k8s/deployment.yaml
       - run:
           name: Echo k8s logs
-          command: cat ./k8s/deployments   
+          command: cat ./k8s/deployment.yaml 
     # docker:
     #   - image: google/cloud-sdk:360.0.0-slim # TODO: Find a better image
     # steps:
