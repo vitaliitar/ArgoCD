@@ -28,9 +28,20 @@ workflows:
 jobs:
   deploy:
     docker:
-      - image: google/cloud-sdk:360.0.0-slim # TODO: Find a better image
+      - image: circleci/python:3.6-stretch
     steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX"
+      - run: git remote add origin git@github.com:vitaliitar/ArgoCD.git
       - run:
-          name: Update infra repo
-          command: |
-            ls
+          name: Updating inferentialthinking website
+          command: git pull origin main
+    # docker:
+    #   - image: google/cloud-sdk:360.0.0-slim # TODO: Find a better image
+    # steps:
+    #   - run:
+    #       name: Update infra repo
+    #       command: |
+    #         ls
