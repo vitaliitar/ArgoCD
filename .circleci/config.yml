@@ -12,6 +12,7 @@ workflows:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           dockerfile: Dockerfile
           path: .
+          public-registry: false
           region: AWS_REGION
           repo: ArgoCD
           tag: "$CIRCLE_SHA1"
