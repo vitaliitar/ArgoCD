@@ -4,7 +4,8 @@
   "description": "Learning ArgoCD",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "echo testing..."
   },
   "repository": {
     "type": "git",
