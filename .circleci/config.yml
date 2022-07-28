@@ -14,5 +14,5 @@ workflows:
           path: .
           public-registry: false
           region: 'us-east-1'
-          repo: ArgoCD
+          repo: argo-app
           tag: "$CIRCLE_SHA1"
