@@ -4,8 +4,8 @@ orbs:
   aws-ecr: circleci/aws-ecr@8.1.0
 
 workflows:
-  # build_and_push_image:
-  #   jobs:
+  build_and_push_image:
+    jobs:
   #     - aws-ecr/build-and-push-image:
   #         registry-id: AWS_ECR_ACCOUNT_URL
   #         aws-access-key-id: AWS_ACCESS_KEY_ID
@@ -16,10 +16,23 @@ workflows:
   #         region: 'us-east-1'
   #         repo: argo-app
   #         tag: "$CIRCLE_SHA1"
+      - deploy:
+        requires:
+          - build_test
+  # deploy:
+  #   jobs:
+  #     steps:
+  #       - run:
+  #         name: Update repo infra
+  #         command: |
+  #           ls
+
+jobs:
   deploy:
-    jobs:
-      steps:
-        - run:
-          name: Update repo infra
+    docker:
+      - image: google/cloud-sdk:360.0.0-slim # TODO: Find a better image
+    steps:
+      - run:
+          name: Update infra repo
           command: |
             ls
