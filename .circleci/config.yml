@@ -16,9 +16,7 @@ workflows:
   #         region: 'us-east-1'
   #         repo: argo-app
   #         tag: "$CIRCLE_SHA1"
-      - deploy:
-        requires:
-          - build_test
+      - deploy
   # deploy:
   #   jobs:
   #     steps:
