@@ -33,7 +33,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "38:e4:8d:48:8a:a6:87:30:9c:51:b0:05:72:a0:1a:99"
+            - "98:3c:bd:3e:92:35:56:ad:23:2f:17:3a:86:c9:de:c8"
       # - run: git remote add origin git@github.com:vitaliitar/ArgoCD.git
       - run:
           name: Updating inferentialthinking website
