@@ -39,11 +39,11 @@ jobs:
           name: Updating inferentialthinking website
           command: git pull origin main
       - run:
-          name: List
-          command: ls
-      - run:
           name: Commit SHA-1
-          command: echo $CIRCLE_SHA1
+          command: sed -i -e "17s|.*|      - image: $AWS_ECR_ACCOUNT_URL.dkr.ecr.us-east-1.amazonaws.com/argo-app:$CIRCLE_SHA1|" ./k8s/deployment.yaml
+      - run:
+          name: Echo k8s logs
+          command: cat ./k8s/deployments   
     # docker:
     #   - image: google/cloud-sdk:360.0.0-slim # TODO: Find a better image
     # steps:

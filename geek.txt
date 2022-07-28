@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guestbook-ui
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: guestbook-ui
+  template:
+    metadata:
+      labels:
+        app: guestbook-ui
+    spec:
+      containers:
+      - image: 514299081096.dkr.ecr.us-east-1.amazonaws.com/argo-app:v1      - image: 514299081096.dkr.ecr.us-east-1.amazonaws.com/argo-app:v1
+        name: guestbook-ui
+        ports:
+        - containerPort: 3000
