@@ -41,15 +41,24 @@ jobs:
       - run:
           name: Commit SHA-1
           command: sed -i -e "17s|.*|$HELPER_PATH$CIRCLE_SHA1|" ./k8s/deployment.yaml
+      # - run:
+      #     name: Indexing
+      #     command: git add .
+      # - run:
+      #     name: Commit
+      #     command: git commit -m "commit from circleci"
+      # - run:
+      #     name: Push
+      #     command: git push
       - run:
-          name: Indexing
-          command: git add .
-      - run:
-          name: Commit
-          command: git commit -m "commit from circleci"
-      - run:
-          name: Push
-          command: git push
+          name: Update infra repo
+          command: |
+            ls
+            git config user.email "git@circleci.com"
+            git config user.name "CircleCI"
+            git add .
+            git commit -m "commit from circleci"
+            git push
       # - run:
       #     name: Echo k8s logs
       #     command: cat ./k8s/deployment.yaml 
