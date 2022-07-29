@@ -14,7 +14,7 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: 514299081096.dkr.ecr.us-east-1.amazonaws.com/argo-app:cdf55dee6be5c281c73a0e56e71f4edd5d387a12
+      - image: 514299081096.dkr.ecr.us-east-1.amazonaws.com/argo-app:da1473e9fb3e2a1f2d904fb8b3591d5a9a2cbd3d
         name: guestbook-ui
         ports:
         - containerPort: 3000
